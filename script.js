@@ -231,14 +231,11 @@ loginForm.addEventListener("submit", async (e) => {
   const pin = inputLoginPin.value.trim();
 
   try {
-    const res = await fetch(
-      "https://bankist-server-production.up.railway.app/api/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, pin }),
-      },
-    );
+    const res = await fetch("https://bankist-server.onrender.com/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, pin }),
+    });
 
     const data = await res.json();
 
