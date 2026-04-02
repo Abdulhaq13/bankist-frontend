@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bankist</title>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════ LOGIN SCREEN -->
+    <div class="login-screen" id="loginScreen">
+      <div class="login-left">
+        <div class="login-brand">
+          <img src="icon.png" alt="Bankist" class="login-logo" />
+          <span class="login-brand-name">Bankist</span>
+        </div>
+        <div class="login-hero">
+          <h1 class="login-title">Your money,<br /><em>simplified.</em></h1>
+          <p class="login-sub">
+            Secure banking at your fingertips. Sign in to manage your account.
+          </p>
+        </div>
+        <div class="login-decoration">
+          <div class="deco-circle deco-1"></div>
+          <div class="deco-circle deco-2"></div>
+          <div class="deco-circle deco-3"></div>
+        </div>
+      </div>
+
+      <div class="login-right">
+        <div class="login-card">
+          <h2 class="login-card-title">Welcome back</h2>
+          <p class="login-card-sub">
+            Enter your credentials to access your account
+          </p>
+
+          <form class="login-form" id="loginForm">
+            <div class="field-group">
+              <label class="field-label">Username</label>
+              <input
+                type="text"
+                class="field-input login__input--user"
+                placeholder="e.g. ah"
+                autocomplete="off"
+              />
+            </div>
+            <div class="field-group">
+              <label class="field-label">PIN</label>
+              <input
+                type="password"
+                class="field-input login__input--pin"
+                placeholder="••••"
+                maxlength="4"
+              />
+            </div>
+            <p class="login-error" id="loginError"></p>
+            <button type="submit" class="login-submit" id="loginBtn">
+              <span class="btn-text">Sign in</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+
+          <p class="login-hint">
+            Demo: <strong>ah / 1111</strong> &nbsp;·&nbsp;
+            <strong>ss / 2222</strong> &nbsp;·&nbsp; <strong>sz / 3333</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ DASHBOARD SCREEN -->
+    <div class="dashboard-screen" id="dashboardScreen">
+      <!-- Top bar -->
+      <header class="dash-header">
+        <div class="dash-header-left">
+          <img src="logo.png" alt="Bankist" class="dash-logo" />
+          <span class="dash-brand">Bankist</span>
+        </div>
+        <p class="welcome">Log in to get started</p>
+        <button class="dash-logout" id="logoutBtn">Sign out →</button>
+      </header>
+
+      <main class="app">
+        <!-- BALANCE -->
+        <div class="balance">
+          <div>
+            <p class="balance__label">Current balance</p>
+            <p class="balance__date">
+              As of <span class="date">05/03/2037</span>
+            </p>
+          </div>
+          <p class="balance__value">0000€</p>
+        </div>
+
+        <!-- MOVEMENTS -->
+        <div class="movements"></div>
+
+        <!-- SUMMARY -->
+        <div class="summary">
+          <p class="summary__label">In</p>
+          <p class="summary__value summary__value--in">0000€</p>
+          <p class="summary__label">Out</p>
+          <p class="summary__value summary__value--out">0000€</p>
+          <p class="summary__label">Interest</p>
+          <p class="summary__value summary__value--interest">0000€</p>
+          <button class="btn--sort">↓ SORT</button>
+        </div>
+
+        <!-- TRANSFER -->
+        <div class="operation operation--transfer">
+          <h2>Transfer money</h2>
+          <form class="form form--transfer">
+            <input type="text" class="form__input form__input--to" />
+            <input type="number" class="form__input form__input--amount" />
+            <button class="form__btn form__btn--transfer">→</button>
+            <label class="form__label">Transfer to</label>
+            <label class="form__label">Amount</label>
+          </form>
+        </div>
+
+        <!-- LOAN -->
+        <div class="operation operation--loan">
+          <h2>Request loan</h2>
+          <form class="form form--loan">
+            <input type="number" class="form__input form__input--loan-amount" />
+            <button class="form__btn form__btn--loan">→</button>
+            <label class="form__label form__label--loan">Amount</label>
+          </form>
+        </div>
+
+        <!-- CLOSE -->
+        <div class="operation operation--close">
+          <h2>Close account</h2>
+          <form class="form form--close">
+            <input type="text" class="form__input form__input--user" />
+            <input
+              type="password"
+              maxlength="6"
+              class="form__input form__input--pin"
+            />
+            <button class="form__btn form__btn--close">→</button>
+            <label class="form__label">Confirm user</label>
+            <label class="form__label">Confirm PIN</label>
+          </form>
+        </div>
+
+        <!-- TIMER -->
+        <p class="logout-timer">
+          You will be logged out in <span class="timer">02:00</span>
+        </p>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
